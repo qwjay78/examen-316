@@ -21,6 +21,12 @@ class ForumController extends AbstractController{
     {
         $this->entityManager = $entityManager;
     }
+
+    #[Route('/', name: 'home')]
+    public function home(): Response
+    {
+        return $this->render('forum/home.html.twig');
+    }
     #[Route('/forum', name: 'forum_index')]
     public function index(ForumTopicRepository $topicRepository): Response
     {
