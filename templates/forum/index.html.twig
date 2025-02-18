@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Forum{% endblock %}
+
+{% block body %}
+<h1>Forum Sujets</h1>
+<a href="{{path('forum_new')}}">Créer nouveau sujet</a>
+<ul>
+{% for topic in topics %}
+<li>
+<a href="#">{{topic.title}}</a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}
